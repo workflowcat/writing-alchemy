@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алхімія Письма</title>
+  <meta name="description" content="Від глиняних табличок до штучного інтелекту — як письмо стало сучасною алхімією">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=UnifrakturCook:wght@700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "@chenglou/pretext": "./node_modules/@chenglou/pretext/dist/layout.js"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Декоративна рамка сторінки -->
+  <div class="page-border">
+    <div class="border-corner border-corner--tl"></div>
+    <div class="border-corner border-corner--tr"></div>
+    <div class="border-corner border-corner--bl"></div>
+    <div class="border-corner border-corner--br"></div>
+    <div class="border-vine border-vine--left"></div>
+    <div class="border-vine border-vine--right"></div>
+  </div>
+
+  <main class="manuscript">
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- СЕКЦІЯ I: ЗАГОЛОВОК / HERO              -->
+    <!-- ═══════════════════════════════════════ -->
+    <header class="section section--hero" id="hero">
+      <div class="illuminated-letter-container">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+      </div>
+      <div class="hero-text">
+        <h1 class="title title--main">
+          <span class="title-letter">А</span>лхімія Письма
+        </h1>
+        <p class="subtitle">Від глиняних табличок до промптів —<br>як слово знову стало заклинанням</p>
+      </div>
+      <div class="hero-thesis">
+        <p>Колись жерці знали священні формули, щоб закликати сили. Потім монахи переписували тексти за ритуалами скрипторіїв. Потім машини зробили письмо механічним. А тепер — ми знову шепочемо правильні слова у правильному порядку, щоб отримати результат. Тільки називаємо це «промпти», «фреймворки» та «навички».</p>
+      </div>
+    </header>
+
+    <!-- Орнаментальний роздільник -->
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 400 40" class="divider-svg">
+        <path d="M0,20 C50,5 100,35 150,20 C200,5 250,35 300,20 C350,5 400,35 400,20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="200" cy="20" r="4" fill="currentColor"/>
+        <circle cx="180" cy="20" r="2" fill="currentColor"/>
+        <circle cx="220" cy="20" r="2" fill="currentColor"/>
+        <path d="M190,12 Q200,6 210,12" fill="none" stroke="currentColor" stroke-width="1"/>
+        <path d="M190,28 Q200,34 210,28" fill="none" stroke="currentColor" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- СЕКЦІЯ II: ВИТОКИ / ORIGINS             -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section section--origins" id="origins">
+      <div class="section-numeral">I</div>
+      <h2 class="section-title">Витоки</h2>
+      <p class="section-era">~ 3400 до н.е. — Месопотамія</p>
+
+      <div class="manuscript-column">
+        <div class="drop-cap drop-cap--red">П</div>
+        <p>Перші знаки на глині не були літературою. Вони були бухгалтерією — облік зерна, олії, худоби. Але ті, хто знав ці знаки, мали владу. Клинопис був технологією контролю: жерці та писарі монополізували символи, і саме через це ставали незамінними.</p>
+
+        <p>Це перша алхімія письма. Не в тому, <em>що</em> записувалось, а в тому, <em>хто</em> вмів записувати. Знання процесу — правильних рухів стилуса по мокрій глині, правильної послідовності символів — було сакральним. Помилка у формулі означала не просто граматичну неточність, а порушення зв'язку з божественним порядком.</p>
+
+        <p>Звучить знайомо? Сьогодні «неправильний промпт» — це не граматична помилка. Це відсутність результату. Процес знову став ритуалом.</p>
+      </div>
+
+      <aside class="marginalia marginalia--right">
+        <p class="marginalia-text">Шумерський писар навчався 12 років, щоб опанувати ~600 клинописних знаків. Сучасний юрист навчається приблизно стільки ж, щоб опанувати мову права.</p>
+      </aside>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 400 40" class="divider-svg">
+        <path d="M0,20 Q100,0 200,20 Q300,40 400,20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M170,20 L200,8 L230,20 L200,32 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="200" cy="20" r="2" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- СЕКЦІЯ III: СКРИПТОРІЇ / SCRIPTORIA     -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section section--scriptoria" id="scriptoria">
+      <div class="section-numeral">II</div>
+      <h2 class="section-title">Скрипторії</h2>
+      <p class="section-era">X–XVI ст. — монастирі Київської Русі та Європи</p>
+
+      <div class="manuscript-column">
+        <div class="drop-cap drop-cap--blue">М</div>
+        <p>Монастирський скрипторій — це перша лабораторія письма. Не метафорично: монахи працювали за суворими протоколами. Пергамент готувався за рецептом. Чорнило змішувалось у точних пропорціях — дубові горішки, залізний купорос, гуміарабік. Золото для ілюмінацій розтиралось до стану пудри та змішувалось з яєчним білком.</p>
+
+        <p>Кожен рух пера був частиною процесу, який передавався від майстра до учня. Це була в буквальному сенсі алхімія — трансформація сирих матеріалів (шкіри, сажі, мінералів) у знання.</p>
+
+        <blockquote class="manuscript-quote">
+          <p>Пересопницьке Євангеліє (1556–1561) — перший переклад Євангелія українською мовою. Архімандрит Григорій та Михайло Васильович, найкращий писар і маляр свого часу, п'ять років переписували та ілюмінували 482 сторінки найвищої якості пергаменту. Сьогодні президенти України складають присягу на цій книзі.</p>
+        </blockquote>
+
+        <p>Київський Псалтир 1397 року — 226 аркушів, 293 мініатюри. Кожна сторінка — це не просто текст, а інтерфейс: ілюстрації пояснюють, маргіналії коментують, орнаменти ведуть погляд. Середньовічний UX-дизайн, якщо хочете.</p>
+      </div>
+
+      <aside class="marginalia marginalia--left">
+        <p class="marginalia-text">Слово «рецепт» походить з алхімічної та медичної традицій — «recipe» означає «візьми». Те саме слово, що для ліків, що для чорнила, що для промпту.</p>
+      </aside>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 400 40" class="divider-svg">
+        <path d="M0,20 C80,5 160,35 200,20 C240,5 320,35 400,20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <g transform="translate(200,20)">
+          <path d="M-8,-8 L0,-12 L8,-8 L12,0 L8,8 L0,12 L-8,8 L-12,0 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- СЕКЦІЯ IV: АЛХІМІЯ / ALCHEMY            -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section section--alchemy" id="alchemy">
+      <div class="section-numeral">III</div>
+      <h2 class="section-title">Алхімія</h2>
+      <p class="section-era">Подвійна природа: магія та наука</p>
+
+      <div class="two-columns">
+        <div class="column column--magic">
+          <h3 class="column-heading column-heading--red">Магічне</h3>
+          <p>Пошук Філософського каменя — субстанції, що перетворює свинець на золото. Століття зусиль, тисячі формул, закодована мова символів. Алхіміки вірили, що правильна комбінація елементів, вимовлена у правильний момент, змінить природу речовини.</p>
+          <p>Зараз ми шукаємо AGI. Правильну архітектуру, правильний датасет, правильний alignment. Пошук «Філософського каменя» нікуди не зник — він просто перейшов у кремнієву форму.</p>
+        </div>
+        <div class="column column--science">
+          <h3 class="column-heading column-heading--green">Наукове</h3>
+          <p>Але справжня спадщина алхімії — не золото. Це лабораторні зошити. Ісаак Ньютон залишив детальні записи кожного експерименту: точні пропорції, температури, результати. Джабір ібн Хайян систематизував хімічні процеси. Джордж Старкі вів щоденники, які читаються як сучасні наукові протоколи.</p>
+          <p>Справжня цінність була не в золоті, а в процесі його пошуку. В нотатках. В описах. В тому, що алхіміки змушені були <em>точно пояснити</em>, що вони роблять і чому. Це і є наука.</p>
+        </div>
+      </div>
+
+      <div class="manuscript-column" style="margin-top: 2rem">
+        <p>Ось ключовий інсайт: <strong>алхімія працювала не тому, що формули були магічними. Вона працювала тому, що процес документування змушував людей думати систематично.</strong> І те саме відбувається зараз з промптингом. Не промпт робить магію — магію робить необхідність чітко сформулювати, що саме тобі потрібно.</p>
+      </div>
+
+      <aside class="marginalia marginalia--right">
+        <p class="marginalia-text">Ньютон позначав метали планетарними символами: золото — ☉, срібло — ☽, свинець — ♄, залізо — ♂. Сучасні розробники теж кодують — тільки у YAML та JSON.</p>
+      </aside>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 400 40" class="divider-svg">
+        <path d="M50,20 L200,20" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4,4"/>
+        <path d="M200,20 L350,20" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4,4"/>
+        <circle cx="200" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="200" cy="20" r="2" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- СЕКЦІЯ V: МЕХАНІЗАЦІЯ / MECHANIZATION   -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section section--mechanization" id="mechanization">
+      <div class="section-numeral">IV</div>
+      <h2 class="section-title">Механізація</h2>
+      <p class="section-era">1440-ті — XX ст.</p>
+
+      <div class="manuscript-column">
+        <div class="drop-cap drop-cap--gold">Ґ</div>
+        <p>Ґутенберг зробив те, що зараз називають «disruption». Друкарський верстат замінив скрипторій. Формула замінила руку. Але — і це важливо — він не демократизував письмо. Він демократизував <em>читання</em>. Письмо залишилось навичкою обраних, просто обрані тепер визначались не монастирем, а ринком.</p>
+
+        <p>Далі — друкарська машинка, бюрократія, стандартизація. Письмо стало <em>процесом</em>. Юридична мова — найяскравіший приклад. Правники створили окрему мову, де кожне слово має точне значення, де послідовність фраз має силу закону, де «незважаючи на вищезазначене» — це не стилістика, а юридичний оператор.</p>
+
+        <p>Патрік Мак-Кензі якось зауважив, що він — кращий інженер, ніж більшість маркетологів, і кращий маркетолог, ніж більшість інженерів, і саме на цьому перетині створюється найбільша цінність. Юридична мова працює так само: це перетин між точністю та впливом. Хто знає правильні слова — має силу.</p>
+      </div>
+
+      <aside class="marginalia marginalia--left">
+        <p class="marginalia-text">Латинська юридична формула «habeas corpus» буквально означає «ти повинен мати тіло». Два слова — і це захист від незаконного ув'язнення. Це і є алхімія слів.</p>
+      </aside>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 400 40" class="divider-svg">
+        <line x1="100" y1="20" x2="300" y2="20" stroke="currentColor" stroke-width="0.5"/>
+        <polygon points="200,10 206,20 200,30 194,20" fill="none" stroke="currentColor" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- СЕКЦІЯ VI: СУЧАСНА АЛХІМІЯ              -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section section--modern" id="modern">
+      <div class="section-numeral">V</div>
+      <h2 class="section-title">Сучасна алхімія</h2>
+      <p class="section-era">2020-ті — зараз</p>
+
+      <div class="manuscript-column">
+        <div class="drop-cap drop-cap--red">Я</div>
+        <p>Я особисто майже не пишу «вручну» вже два роки. І я бачу, як колеги — медики, юристи, аналітики — переходять на те саме. Це не тимчасовий тренд. Це не повернеться назад. Ми бачимо тільки розширення.</p>
+
+        <p>І от що цікаво: процес виглядає дивовижно схожим на те, що робили алхіміки. Подивіться на сучасний «промпт-інжиніринг»:</p>
+
+        <ul class="alchemy-list">
+          <li><span class="list-symbol">☿</span> <strong>Правильні слова:</strong> «Act as a senior lawyer reviewing a contract» — це заклинання. Ти кличеш сутність, описуючи її роль. Середньовічні маги робили те саме.</li>
+          <li><span class="list-symbol">♃</span> <strong>Правильна послідовність:</strong> Chain-of-thought, few-shot examples, system prompts — це ритуальний порядок. Спочатку контекст, потім завдання, потім обмеження. Порушиш порядок — результат зміниться.</li>
+          <li><span class="list-symbol">♄</span> <strong>Правильні інструменти:</strong> «Skills», «frameworks», «workflows» — ми навіть називаємо це тими ж словами, що й середньовічні ремісничі гільдії. Навичка передається від майстра до учня. Фреймворк — це рецепт.</li>
+        </ul>
+
+        <p>Юридична освіта вже працює саме так. Студент-правник не просто вчить закони — він вчить <em>мову</em>, якою закони функціонують. Він вчить, які слова викликають які наслідки. Він вчить рецепти: «щоб скласти позовну заяву, візьміть підставу, додайте обґрунтування, вкажіть вимоги у такій послідовності». Це вже алхімія.</p>
+
+        <p>Різниця лише в тому, що раніше ці «рецепти» були прив'язані до конкретних професій: юристи знали юридичні формули, лікарі — медичні протоколи, інженери — технічні стандарти. Тепер усі працюють з одним і тим самим медіумом — мовою як інтерфейсом до машини. І знову, як за часів клинопису, ті, хто знає правильні слова — мають владу.</p>
+      </div>
+
+      <aside class="marginalia marginalia--right">
+        <p class="marginalia-text">«Prompt engineering» — інженерія промптів. Але «промпт» від латинського promptus — «готовий, швидкий». А «інженерія» — від ingenium, «винахідливість». Ми буквально займаємось «винахідливістю готовності».</p>
+      </aside>
+
+      <div class="manuscript-column" style="margin-top: 2rem">
+        <p class="conclusion-text">Письмо завершило повне коло. Від сакрального ритуалу — через механізацію — назад до ритуалу. Тільки тепер ритуал називається «workflow», храм — «IDE», а жерці — «senior prompt engineers». Але суть та сама: <strong>хто знає правильні слова і правильний процес — той трансформує реальність.</strong></p>
+
+        <p class="conclusion-text">І як у справжній алхімії, справжня цінність — не в магії. А в тому, що процес пошуку правильних слів змушує нас <em>точно розуміти</em>, чого ми хочемо. Це і є Філософський камінь.</p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 400 40" class="divider-svg">
+        <path d="M100,20 C150,5 250,35 300,20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M150,15 L200,5 L250,15" fill="none" stroke="currentColor" stroke-width="0.8"/>
+        <path d="M150,25 L200,35 L250,25" fill="none" stroke="currentColor" stroke-width="0.8"/>
+        <circle cx="200" cy="20" r="3" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- КОЛОФОН                                 -->
+    <!-- ═══════════════════════════════════════ -->
+    <footer class="section section--colophon" id="colophon">
+      <div class="colophon-ornament" aria-hidden="true">❦</div>
+      <p class="colophon-text">
+        Цей рукопис створено у квітні 2026 року.<br>
+        Текст набрано шрифтами Cormorant Garamond, UnifrakturCook та JetBrains Mono.<br>
+        Вёрстка тексту — бібліотека <a href="https://github.com/chenglou/pretext" target="_blank" rel="noopener">pretext</a>.<br>
+        Візуальний стиль натхненний грою <em>Pentiment</em> та традицією українських ілюмінованих рукописів.<br>
+        Тон письма — у дусі Патріка Мак-Кензі: системне мислення на перетині дисциплін.
+      </p>
+      <div class="colophon-ornament" aria-hidden="true">❦</div>
+    </footer>
+
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

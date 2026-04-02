@@ -1,0 +1,489 @@
+/* ═══════════════════════════════════════════════════
+   АЛХІМІЯ ПИСЬМА — Pentiment-inspired manuscript CSS
+   ═══════════════════════════════════════════════════ */
+
+/* --- Palette --- */
+:root {
+  --parchment:    #f4e8c1;
+  --parchment-dk: #e8d5a3;
+  --ink:          #2c1810;
+  --ink-light:    #5a3e2b;
+  --vermillion:   #8b2500;
+  --gold:         #c4a265;
+  --gold-bright:  #d4af37;
+  --forest:       #2d4a2d;
+  --deep-blue:    #1a3a5c;
+  --marginalia:   #7a6548;
+  --divider:      #a08460;
+
+  --font-body:      'Cormorant Garamond', 'Georgia', serif;
+  --font-blackletter: 'UnifrakturCook', cursive;
+  --font-mono:      'JetBrains Mono', monospace;
+
+  --page-max:     760px;
+  --page-padding:  2.5rem;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--gold) var(--parchment-dk);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  line-height: 1.75;
+  /* Parchment texture via layered gradients */
+  background-color: var(--parchment);
+  background-image:
+    /* Aged spots */
+    radial-gradient(ellipse at 15% 25%, rgba(160,132,96,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 60%, rgba(140,115,80,0.10) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 90%, rgba(160,132,96,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 70%, rgba(120,100,65,0.06) 0%, transparent 35%),
+    /* Subtle fiber texture */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(160,132,96,0.03) 3px,
+      rgba(160,132,96,0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 5px,
+      rgba(160,132,96,0.02) 5px,
+      rgba(160,132,96,0.02) 6px
+    );
+  min-height: 100vh;
+}
+
+a {
+  color: var(--deep-blue);
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--vermillion); }
+
+/* --- Page Border (illuminated manuscript frame) --- */
+.page-border {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.border-corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+.border-corner--tl { top: 12px; left: 12px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+.border-corner--tr { top: 12px; right: 12px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+.border-corner--bl { bottom: 12px; left: 12px; border-bottom: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+.border-corner--br { bottom: 12px; right: 12px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+
+/* Corner ornaments */
+.border-corner::after {
+  content: '❧';
+  position: absolute;
+  color: var(--gold);
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+.border-corner--tl::after { top: 4px; left: 8px; transform: rotate(0deg); }
+.border-corner--tr::after { top: 4px; right: 8px; transform: rotate(90deg); }
+.border-corner--bl::after { bottom: 4px; left: 8px; transform: rotate(-90deg); }
+.border-corner--br::after { bottom: 4px; right: 8px; transform: rotate(180deg); }
+
+.border-vine {
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+  width: 20px;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0px,
+      transparent 30px,
+      var(--gold) 30px,
+      var(--gold) 31px,
+      transparent 31px,
+      transparent 50px
+    );
+  opacity: 0.2;
+}
+.border-vine--left { left: 22px; }
+.border-vine--right { right: 22px; }
+
+/* --- Manuscript (main container) --- */
+.manuscript {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 4rem var(--page-padding) 3rem;
+  position: relative;
+}
+
+/* --- Section Base --- */
+.section {
+  margin-bottom: 1rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSection 0.8s ease forwards;
+}
+
+/* Stagger sections */
+.section--hero       { animation-delay: 0.1s; }
+.section--origins    { animation-delay: 0.2s; }
+.section--scriptoria { animation-delay: 0.3s; }
+.section--alchemy    { animation-delay: 0.4s; }
+.section--mechanization { animation-delay: 0.5s; }
+.section--modern     { animation-delay: 0.6s; }
+.section--colophon   { animation-delay: 0.7s; }
+
+@keyframes fadeInSection {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- HERO --- */
+.section--hero {
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.hero-canvas {
+  display: block;
+  margin: 0 auto 1.5rem;
+  max-width: 100%;
+}
+
+.title--main {
+  font-family: var(--font-blackletter);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.title-letter {
+  font-size: 4.5rem;
+  color: var(--vermillion);
+  float: none;
+  line-height: 1;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink-light);
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.hero-thesis {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+.hero-thesis p::first-letter {
+  font-size: 1.3em;
+  color: var(--vermillion);
+}
+
+/* --- Section Titles --- */
+.section-numeral {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.section-title {
+  font-family: var(--font-blackletter);
+  font-size: 2.2rem;
+  text-align: center;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
+
+.section-era {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--marginalia);
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+/* --- Manuscript Column --- */
+.manuscript-column {
+  position: relative;
+}
+
+.manuscript-column p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.manuscript-column p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Drop Caps --- */
+.drop-cap {
+  float: left;
+  font-family: var(--font-blackletter);
+  font-size: 4.5rem;
+  line-height: 0.8;
+  padding-right: 0.15em;
+  padding-top: 0.05em;
+  font-weight: 700;
+}
+.drop-cap--red  { color: var(--vermillion); }
+.drop-cap--blue { color: var(--deep-blue); }
+.drop-cap--gold { color: var(--gold-bright); }
+.drop-cap--green { color: var(--forest); }
+
+/* --- Marginalia --- */
+.marginalia {
+  position: absolute;
+  top: 2rem;
+  width: 140px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--marginalia);
+  font-style: italic;
+}
+
+.marginalia--left  { left: -165px; text-align: right; }
+.marginalia--right { right: -165px; text-align: left; }
+
+.marginalia-text {
+  border-top: 1px solid var(--gold);
+  padding-top: 0.5rem;
+}
+
+/* Hide marginalia on narrow screens */
+@media (max-width: 1100px) {
+  .marginalia {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(196, 162, 101, 0.08);
+    border-left: 3px solid var(--gold);
+    border-top: none;
+    font-size: 0.85rem;
+  }
+  .marginalia-text {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+/* --- Blockquote (manuscript-style) --- */
+.manuscript-quote {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(196, 162, 101, 0.06);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-light);
+}
+
+.manuscript-quote p { margin: 0; text-align: left; }
+
+/* --- Two Columns (Alchemy section) --- */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.column { text-align: justify; }
+
+.column p {
+  margin-bottom: 1rem;
+  hyphens: auto;
+}
+
+.column-heading {
+  font-family: var(--font-blackletter);
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.column-heading--red   { color: var(--vermillion); }
+.column-heading--green { color: var(--forest); }
+
+.column--magic {
+  border-right: 1px solid var(--gold);
+  padding-right: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .column--magic {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* --- Alchemy list --- */
+.alchemy-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0;
+}
+
+.alchemy-list li {
+  padding: 0.6rem 0;
+  padding-left: 0.5rem;
+  border-bottom: 1px dotted rgba(160,132,96,0.3);
+}
+
+.alchemy-list li:last-child { border-bottom: none; }
+
+.list-symbol {
+  font-size: 1.2rem;
+  margin-right: 0.3rem;
+  color: var(--gold-bright);
+}
+
+/* --- Conclusion --- */
+.conclusion-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+.conclusion-text strong {
+  color: var(--vermillion);
+  font-weight: 600;
+}
+
+/* --- Dividers --- */
+.divider {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  color: var(--divider);
+}
+
+.divider-svg {
+  width: min(80%, 320px);
+  height: 40px;
+}
+
+/* --- Colophon --- */
+.section--colophon {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.colophon-ornament {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin: 0.5rem 0;
+}
+
+.colophon-text {
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: var(--marginalia);
+  font-style: italic;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.colophon-text a {
+  color: var(--marginalia);
+}
+
+/* --- Selection color --- */
+::selection {
+  background: rgba(196, 162, 101, 0.3);
+  color: var(--ink);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--parchment-dk);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+  border: 2px solid var(--parchment-dk);
+}
+
+/* --- Scroll-triggered reveal --- */
+.section[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Disable initial animation, use scroll-based */
+@media (prefers-reduced-motion: no-preference) {
+  .section {
+    animation: none;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .section[data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Always show hero immediately */
+  .section--hero {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* --- Print --- */
+@media print {
+  .page-border, .divider { display: none; }
+  .section { opacity: 1; transform: none; }
+  body { background: white; }
+}
