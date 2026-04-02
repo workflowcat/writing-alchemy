@@ -305,6 +305,57 @@ a:hover { color: var(--vermillion); }
   }
 }
 
+/* --- Manuscript Figures --- */
+.manuscript-figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.manuscript-figure img {
+  max-width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  border: 3px solid var(--gold);
+  padding: 4px;
+  background: var(--parchment-dk);
+  box-shadow: 0 4px 20px rgba(44, 24, 16, 0.12);
+}
+
+.manuscript-figure figcaption {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--marginalia);
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+.manuscript-figure--pair {
+  margin: 2.5rem 0;
+}
+
+/* --- Interactive Canvas --- */
+.interactive-canvas-container {
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.displacement-canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  cursor: crosshair;
+  border: 1px solid rgba(196, 162, 101, 0.3);
+}
+
+.canvas-hint {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--marginalia);
+  margin-top: 0.4rem;
+  opacity: 0.7;
+}
+
 /* --- Blockquote (manuscript-style) --- */
 .manuscript-quote {
   margin: 1.5rem 0;
